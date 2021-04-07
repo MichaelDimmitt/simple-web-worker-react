@@ -15,3 +15,6 @@ https://kevincunningham.co.uk/posts/kcd-react-performance
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
 https://github.com/mdn/simple-web-worker
 
+### cool reading
+https://github.com/tc39/proposal-js-module-blocks/issues/43
+https://github.com/tc39/proposal-js-module-blocks/issues/21
