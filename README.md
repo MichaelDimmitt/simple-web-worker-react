@@ -1,6 +1,14 @@
 ## simple-web-worker-react
 using the workerize-loader, modeled after kent c dodds performance workshop
 
+## why web worker
+Putting a long task in a promise.then() will not get it off the main thread.<br/>
+Insight from stack overflow answer: https://stackoverflow.com/a/52444964/5283424<br/>
+```
+promises don't make anything asynchronous or parallel.
+They can only be used to observe things that are already asynchronous or parallel.
+```
+
 ## Links
 ### Workerize related links:
 https://github.com/developit/workerize-loader
