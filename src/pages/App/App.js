@@ -1,5 +1,6 @@
 import './App.css';
 import loopWorker from 'workerize-loader!../../workers/loopWorker'; // eslint-disable-line import/no-webpack-loader-syntax
+import { callWebWorker } from '../../utils/workerUtils'
 function App() {
   function triggerLoopWorker(e) {
     e.preventDefault()
