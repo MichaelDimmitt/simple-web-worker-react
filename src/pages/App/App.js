@@ -3,14 +3,8 @@ import loopWorker from 'workerize-loader!../../workers/loopWorker'; // eslint-di
 function App() {
   function triggerLoopWorker(e) {
     e.preventDefault()
-    let instance = new loopWorker();
-    instance.countToBillion()
-      .then(x => {
-        console.log({x});
-        return x;
-      })
-      .then(_ => instance.terminate())
-      .catch(_ => instance.terminate());
+    // console log example, but callWebWorker returns a promise!
+    callWebWorker(boardWorker, "countToBillion", 'hi', 'bye')
   }
   return (
     <div className="App">
