@@ -4,7 +4,7 @@ function App() {
   function triggerLoopWorker(e) {
     e.preventDefault()
     // console log example, but callWebWorker returns a promise!
-    callWebWorker(boardWorker, "countToBillion", 'hi', 'bye')
+    callWebWorker(loopWorker, "countToBillion", 'hi', 'bye')
   }
   return (
     <div className="App">
