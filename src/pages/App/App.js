@@ -5,13 +5,19 @@ import { useState } from 'react';
 const App = () => {
   const handleWebWorkerExampleClick = (e) => {
     e.preventDefault()
-    // console log example, but callWebWorker returns a promise!
+    // example with useState passed as a callback
     callWebWorker(loopWorker, "countToBillion", setResultText)
-    callWebWorker(loopWorker, "countToBillion", console.log)
 
+    // example with console.log passed as a callback additional params like indexToStartCounting get sent to the worker
+    const indexToStartCounting = 0
+    callWebWorker(loopWorker, "countToBillion", console.log, indexToStartCounting)
+
+    // note: you could also fire a network request when the worker completes to an analytic service 
+    // or other api to track calculated or filtered information without blocking the main thread.
+    
     // example to handle nested data and console log the result of the filterDataWorker web worker
     const largeDataObject = { a: 'text', b: { c: 'more text', d: 'last item '} }
-    callWebWorkerHandleNestedData(loopWorker, "filterDataWorker", console.log, largeDataObject)
+    callWebWorkerHandleNestedData(loopWorker, "countToBillion   ", console.log, largeDataObject)
   }
   const [resultText, setResultText] = useState('')
   return (
