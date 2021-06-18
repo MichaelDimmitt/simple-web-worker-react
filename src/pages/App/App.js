@@ -3,7 +3,7 @@ import loopWorker from 'workerize-loader!../../workers/loopWorker'; // eslint-di
 import { callWebWorker } from '../../utils/workerUtils'
 import { useState } from 'react';
 function App() {
-  function triggerLoopWorker(e) {
+  function handleWebWorkerExampleClick(e) {
     e.preventDefault()
     // console log example, but callWebWorker returns a promise!
     callWebWorker(loopWorker, "countToBillion", setResultText)
@@ -16,7 +16,7 @@ function App() {
         <a
           href="/"
           className="App-link"
-          onClick={triggerLoopWorker}
+          onClick={handleWebWorkerExampleClick}
           target="_blank"
           rel="noopener noreferrer"
         >
