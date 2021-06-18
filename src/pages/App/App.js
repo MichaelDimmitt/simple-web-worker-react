@@ -1,10 +1,11 @@
 import './App.css';
 import loopWorker from 'workerize-loader!../../workers/loopWorker'; // eslint-disable-line import/no-webpack-loader-syntax
+import { callWebWorker } from '../../utils/workerUtils'
 function App() {
   function triggerLoopWorker(e) {
     e.preventDefault()
     // console log example, but callWebWorker returns a promise!
-    callWebWorker(boardWorker, "countToBillion", 'hi', 'bye')
+    callWebWorker(loopWorker, "countToBillion", 'hi', 'bye')
   }
   return (
     <div className="App">
